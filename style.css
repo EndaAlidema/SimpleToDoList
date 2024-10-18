@@ -1,0 +1,129 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #050606; 
+    color: #ecf0f1;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #ecf0f1; 
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 20px;
+}
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#new-task {
+    background-color: #ebeced;
+    color: #050505;
+}
+
+#todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto; 
+    max-width: 600px;
+}
+
+li {
+    background: #5a5d60; 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 10px 0;
+    transition: transform 0.2s;
+    position: relative;
+}
+
+li:hover {
+    transform: translateY(-2px);
+}
+
+input[type="text"] {
+    width: 40%;
+    padding: 10px;
+    border: 2px solid #3d2ee9;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #ecf0f1; 
+    color: #34495e; 
+}
+
+input[type="text"]:focus {
+    border-color: #0056b3;
+    outline: none;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    margin-left: 10px; 
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.task-delete {
+    background-color: #28a745;
+    position: absolute;
+    right: 10px;
+}
+
+.task-delete:hover {
+    background-color: #c82333;
+}
+
+.task-delete:active {
+    background-color: darkred;
+}
+
+input[type="checkbox"] {
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    accent-color: #28a745;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: auto;
+    }
+
+    li {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
