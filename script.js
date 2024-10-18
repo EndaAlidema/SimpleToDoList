@@ -11,7 +11,7 @@ async function fetchTodos() {
         listItem.innerHTML = `
             <span>${todo.task}</span>
             <input type="checkbox" ${todo.completed ? 'checked' : ''} onchange="toggleComplete('${todo._id}', this.checked)">
-            <button onclick="deleteTodo('${todo._id}')">Delete</button>
+            <button class="task-delete" onclick="deleteTodo('${todo._id}')">Delete</button>
         `;
         todoList.appendChild(listItem);
     });
@@ -45,13 +45,11 @@ async function toggleComplete(id, completed) {
     fetchTodos();
 }
 
-
 async function deleteTodo(id) {
     await fetch(`${apiUrl}/${id}`, {  
         method: 'DELETE'
     });
     fetchTodos();
 }
-
 
 fetchTodos();
